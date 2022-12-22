@@ -1,3 +1,17 @@
+:root {
+  /*Font family*/
+  --ff-ubuntu:'Ubuntu', sans-serif;;
+  --fw-regular: 300;
+  --fw-bold: 900;
+  /*Coloured boxes*/
+  --color-Light:white;
+  --color-Border:#d0d0d5;
+  --color-Border-Light:#dfdfdf;
+  --color-Dark:rgb(38, 38, 38);
+  --color-Accent:rgb(255, 115, 150);
+  --color-Accent-Light:rgb(254, 173, 193);
+}
+
 span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
@@ -17,8 +31,8 @@ html {
 }
 
 body {
-  font-family: sans-serif;
-  color: #0a0a23;
+  font-family: var(--ff-ubuntu);
+  color: var(--color-Dark);
 }
 
 h1 {
@@ -44,7 +58,7 @@ h1 .flex span:last-of-type {
 section {
   max-width: 40rem;
   margin: 0 auto;
-  border: 2px solid #d0d0d5;
+  border: 2px solid var(--color-Border);
 }
 
 #years {
@@ -52,8 +66,8 @@ section {
   justify-content: flex-end;
   position: sticky;
   top: 0;
-  background: #0a0a23;
-  color: #fff;
+  background: var(--color-Dark);
+  color: var(--color-Light);
   z-index: 999;
   padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
   margin: 0 -2px;
@@ -69,10 +83,6 @@ section {
   padding: 0 0.75rem 1.5rem 0.75rem;
 }
 
-span {
-  font-weight: normal;
-}
-
 table {
   border-collapse: collapse;
   border: 0;
@@ -82,7 +92,7 @@ table {
 }
 
 table caption {
-  color: #356eaf;
+  color: var(--color-Accent);
   font-size: 1.3em;
   font-weight: normal;
   position: absolute;
@@ -101,7 +111,7 @@ tbody th {
 }
 
 tr[class="total"] {
-  border-bottom: 4px double #0a0a23;
+  border-bottom: 2px solid var(--color-Border);
   font-weight: bold;
 }
 
@@ -120,7 +130,7 @@ tr.total td:nth-of-type(3) {
 }
 
 tr.total:hover {
-  background-color: #99c9ff;
+  background-color: var(--color-Accent-Light);
 }
 
 td.current {
@@ -128,5 +138,29 @@ td.current {
 }
 
 tr.data {
-  background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+  background-image: linear-gradient(to bottom, var(--color-Border-Light) 1.845rem, var(--color-Light) 1.845rem);
+}
+
+tr.data th {
+  text-align: left;
+  padding-top: 0.3rem;
+  padding-left: 0.5rem;
+}
+
+tr.data th .description {
+  display: block;
+  font-weight: normal;
+  font-style: italic;
+  padding: 1rem 0 0.75rem;
+  margin-right: -13.5rem;
+}
+
+tr.data td {
+  vertical-align: top;
+  padding: 0.3rem 0.25rem 0;
+  text-align: right;
+}
+
+tr.data td:last-of-type {
+  padding: 0.5rem;
 }
